@@ -8,6 +8,7 @@ void CHeapSort::heapify(int arr[], int tamanoArray, int nodoPadre)
     int l = 2 * nodoPadre + 1; // Nodo Izquiero = 2*i + 1
     int r = 2 * nodoPadre + 2; // Nodo Derecho = 2*i + 2
 
+    comparisonsHeapSort++;
     // Si el nodo Izquierdo es mas grande que el Nodo Padre
     if (l < tamanoArray && arr[l] > arr[largest]) {
         largest = l;
@@ -42,6 +43,11 @@ void CHeapSort::heapSort(int arr[], int n)
         // 
         heapify(arr, i, 0);
     }
+}
+
+int CHeapSort::comparisons()
+{
+    return comparisonsHeapSort;
 }
 
 /* Funcion para imprimir el array */
