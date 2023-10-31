@@ -107,40 +107,36 @@ int main() {
             << comparisonsHeapSort << endl;
     }
 
-    cout << "Ordered Array" << endl;
+    cout << "Array Ordenado" << endl;
     cout << "Elementos del Arreglo | Comparaciones de QuickSort | Comparaciones "
         "de BubbleSort | Comparaciones de HeapSort"
         << endl;
 
-    for (int i = 0; i < 5; i++) {
-        int n = elementos_del_arreglo[i];
+    n = 100000;
 
-        int arregloAleatorioQuickSort[n];
-        int arregloAleatorioBubbleSort[n];
-        int arregloAleatorioHeapSort[n];
+    int arregloAleatorioQuickSort[n];
+    int arregloAleatorioBubbleSort[n];
+    int arregloAleatorioHeapSort[n];
 
-        for (int j = 0; j < n; j++) {
-            arregloAleatorioQuickSort[j] = j;
-            arregloAleatorioBubbleSort[j] = j;
-            arregloAleatorioHeapSort[j] = j;
-        }
-
-        comparisonsQuickSort = 0; // Reiniciar los contadores
-        comparisonsBubbleSort = 0;
-        comparisonsHeapSort = 0;
-
-        quickSort(arregloAleatorioQuickSort, 0, n - 1);
-        bubbleSort(arregloAleatorioBubbleSort, n);
-
-        myHeapSortAlgorithm.heapSort(arregloAleatorioHeapSort, n);
-        comparisonsHeapSort = myHeapSortAlgorithm.comparisons();
-
-
-        cout << setw(21) << n << " | " << setw(26) << comparisonsQuickSort << " | "
-            << setw(27) << comparisonsBubbleSort << " | " << setw(25)
-            << comparisonsHeapSort << endl;
-
+    for (int j = 0; j < n; j++) {
+        arregloAleatorioQuickSort[j] = j;
+        arregloAleatorioBubbleSort[j] = j;
+        arregloAleatorioHeapSort[j] = j;
     }
+
+    comparisonsQuickSort = 0; // Reiniciar los contadores
+    comparisonsBubbleSort = 0;
+    comparisonsHeapSort = 0;
+
+    quickSort(arregloAleatorioQuickSort, 0, n - 1);
+    bubbleSort(arregloAleatorioBubbleSort, n);
+
+    myHeapSortAlgorithm.heapSort(arregloAleatorioHeapSort, n);
+    comparisonsHeapSort = myHeapSortAlgorithm.comparisons();
+
+    cout << setw(21) << n << " | " << setw(26) << comparisonsQuickSort << " | "
+        << setw(27) << comparisonsBubbleSort << " | " << setw(25)
+        << comparisonsHeapSort << endl;
 
     return 0;
 }
