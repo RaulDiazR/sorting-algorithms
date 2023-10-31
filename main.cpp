@@ -62,11 +62,15 @@ void bubbleSort(int arr[], int n) {
 }
 
 int main()
-{
+{   
+    CHeapSort myHeapSortAlgorithm;
     // Inicializar el generador de números aleatorios
     srand(time(0));
 
     int elementos_del_arreglo[] = {10, 100, 1000, 10000, 100000};
+   
+    int sizeofArray = sizeof(elementos_del_arreglo) / sizeof(elementos_del_arreglo[0]);
+    myHeapSortAlgorithm.heapSort(elementos_del_arreglo, sizeofArray);
 
     cout << "Elementos del Arreglo | Comparaciones de QuickSort | Comparaciones de BubbleSort | Comparaciones de HeapSort" << endl;
     
