@@ -1,11 +1,14 @@
-#include <iostream>
-#include <iomanip>
 #include "CHeapSort.h"
+#include <iomanip>
+#include <iostream>
 using namespace std;
 
-int comparisonsQuickSort = 0; // Inicializar el contador de comparaciones para QuickSort
-int comparisonsBubbleSort = 0; // Inicializar el contador de comparaciones para BubbleSort
-int comparisonsHeapSort = 0; // Inicializar el contador de comparaciones para HeapSort
+int comparisonsQuickSort =
+0; // Inicializar el contador de comparaciones para QuickSort
+int comparisonsBubbleSort =
+0; // Inicializar el contador de comparaciones para BubbleSort
+int comparisonsHeapSort =
+0; // Inicializar el contador de comparaciones para HeapSort
 
 // Función para intercambiar elementos
 void swap(int* a, int* b) {
@@ -25,9 +28,10 @@ int partition(int array[], int low, int high) {
 
     // Compararlos con el pivote
     for (int j = low; j < high; j++) {
+        comparisonsQuickSort++; // Incrementar el contador de comparaciones para
+        // QuickSort
         if (array[j] <= pivot) {
             i++;
-            comparisonsQuickSort++; // Incrementar el contador de comparaciones para QuickSort
             swap(&array[i], &array[j]);
         }
     }
@@ -54,7 +58,8 @@ void bubbleSort(int arr[], int n) {
 
     for (i = 0; i < n - 1; i++) {
         for (j = 0; j < n - i - 1; j++) {
-            comparisonsBubbleSort++; // Incrementar el contador de comparaciones para BubbleSort
+            comparisonsBubbleSort++; // Incrementar el contador de comparaciones para
+            // BubbleSort
             if (arr[j] > arr[j + 1]) {
                 swap(arr[j], arr[j + 1]);
             }
@@ -62,15 +67,16 @@ void bubbleSort(int arr[], int n) {
     }
 }
 
-int main()
-{
+int main() {
     CHeapSort myHeapSortAlgorithm;
     // Inicializar el generador de números aleatorios
     srand(time(0));
 
     int elementos_del_arreglo[] = { 10, 100, 1000, 10000, 100000 };
 
-    cout << "Elementos del Arreglo | Comparaciones de QuickSort | Comparaciones de BubbleSort | Comparaciones de HeapSort" << endl;
+    cout << "Elementos del Arreglo | Comparaciones de QuickSort | Comparaciones "
+        "de BubbleSort | Comparaciones de HeapSort"
+        << endl;
 
     for (int i = 0; i < 5; i++) {
         int n = elementos_del_arreglo[i];
@@ -92,10 +98,13 @@ int main()
 
         quickSort(arregloAleatorioQuickSort, 0, n - 1);
         bubbleSort(arregloAleatorioBubbleSort, n);
+
         myHeapSortAlgorithm.heapSort(arregloAleatorioHeapSort, n);
         comparisonsHeapSort = myHeapSortAlgorithm.comparisons();
 
-        cout << setw(21) << n << " | " << setw(26) << comparisonsQuickSort << " | " << setw(27) << comparisonsBubbleSort << " | " << setw(25) << comparisonsHeapSort << endl;
+        cout << setw(21) << n << " | " << setw(26) << comparisonsQuickSort << " | "
+            << setw(27) << comparisonsBubbleSort << " | " << setw(25)
+            << comparisonsHeapSort << endl;
     }
 
     return 0;
