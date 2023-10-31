@@ -31,6 +31,8 @@ void CHeapSort::heapify(int arr[], int tamanoArray, int nodoPadre)
 // Funcion principal para ralizar el Algoritmo
 void CHeapSort::heapSort(int arr[], int n)
 {
+    comparisonsHeapSort = 0;
+
     // Creamos un Sub - Arbol (Sub - Array)
     for (int i = n / 2 - 1; i >= 0; i--)  // O(n)
         heapify(arr, n, i);   // nlog(n)
