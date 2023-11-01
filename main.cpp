@@ -80,37 +80,37 @@ int main() {
     cout << "Elementos del Arreglo | Comparaciones de QuickSort | Comparaciones "
         "de BubbleSort | Comparaciones de HeapSort"
         << endl;
-    for (int k = 0; k < 10; k++) {
-        for (int i = 0; i < 5; i++) {
-            n = elementos_del_arreglo[i];
+    
+    for (int i = 0; i < 5; i++) {
+        n = elementos_del_arreglo[i];
 
-            int arregloAleatorioQuickSort[n];
-            int arregloAleatorioBubbleSort[n];
-            int arregloAleatorioHeapSort[n];
+        int arregloAleatorioQuickSort[n];
+        int arregloAleatorioBubbleSort[n];
+        int arregloAleatorioHeapSort[n];
 
-            for (int j = 0; j < n; j++) {
-                int numeroAleatorio = (rand() % 100000);
-                arregloAleatorioQuickSort[j] = numeroAleatorio;
-                arregloAleatorioBubbleSort[j] = numeroAleatorio;
-                arregloAleatorioHeapSort[j] = numeroAleatorio;
-            }
-
-            comparisonsQuickSort = 0; // Reiniciar los contadores
-            comparisonsBubbleSort = 0;
-            comparisonsHeapSort = 0;
-
-            quickSort(arregloAleatorioQuickSort, 0, n - 1);
-            bubbleSort(arregloAleatorioBubbleSort, n);
-
-            myHeapSortAlgorithm.heapSort(arregloAleatorioHeapSort, n);
-            comparisonsHeapSort = myHeapSortAlgorithm.comparisons();
-
-
-            cout << setw(21) << n << " | " << setw(26) << comparisonsQuickSort
-                << " | " << setw(27) << comparisonsBubbleSort << " | " << setw(25)
-                << comparisonsHeapSort << endl;
+        for (int j = 0; j < n; j++) {
+            int numeroAleatorio = (rand() % 100000);
+            arregloAleatorioQuickSort[j] = numeroAleatorio;
+            arregloAleatorioBubbleSort[j] = numeroAleatorio;
+            arregloAleatorioHeapSort[j] = numeroAleatorio;
         }
+
+        comparisonsQuickSort = 0; // Reiniciar los contadores
+        comparisonsBubbleSort = 0;
+        comparisonsHeapSort = 0;
+
+        quickSort(arregloAleatorioQuickSort, 0, n - 1);
+        bubbleSort(arregloAleatorioBubbleSort, n);
+
+        myHeapSortAlgorithm.heapSort(arregloAleatorioHeapSort, n);
+        comparisonsHeapSort = myHeapSortAlgorithm.comparisons();
+
+
+        cout << setw(21) << n << " | " << setw(26) << comparisonsQuickSort
+            << " | " << setw(27) << comparisonsBubbleSort << " | " << setw(25)
+            << comparisonsHeapSort << endl;
     }
+    
 
     cout << "Array Ordenado" << endl;
     cout << "Elementos del Arreglo | Comparaciones de QuickSort | Comparaciones "
