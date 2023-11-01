@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-long averages[15] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
 
 int comparisonsQuickSort =
 0; // Inicializar el contador de comparaciones para QuickSort
@@ -105,25 +105,11 @@ int main() {
             myHeapSortAlgorithm.heapSort(arregloAleatorioHeapSort, n);
             comparisonsHeapSort = myHeapSortAlgorithm.comparisons();
 
-            averages[i] += comparisonsQuickSort;
-            averages[5 + i] += comparisonsBubbleSort;
-            averages[10 + i] += comparisonsHeapSort;
 
             cout << setw(21) << n << " | " << setw(26) << comparisonsQuickSort
                 << " | " << setw(27) << comparisonsBubbleSort << " | " << setw(25)
                 << comparisonsHeapSort << endl;
         }
-    }
-
-    cout << "Promedio Comparaciones" << endl;
-    cout << "Comparaciones de QuickSort | Comparaciones de BubbleSort | "
-        "Comparaciones de HeapSort"
-        << endl;
-
-    for (int i = 0; i < 5; i++) {
-        cout << elementos_del_arreglo[i] << " | " << setw(21) << averages[i] / 10 << " | " << setw(26)
-            << averages[5 + i] / 10 << " | " << setw(25) << averages[10 + i] / 10
-            << endl;
     }
 
     cout << "Array Ordenado" << endl;
